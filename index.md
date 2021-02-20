@@ -1,37 +1,44 @@
-## Welcome to GitHub Pages
+# joi-country
+A simple joi extension to validate countries
 
-You can use the [editor on GitHub](https://github.com/mongroves/joi-country-validator/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+# Features
+- validates country strings
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# Installation
+```sh
+npm install joi-country
 
-### Markdown
+or
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+yarn add joi-country
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+# Usage
+```javascript
+const joi = require('joi');
+const joi-country = require('joi-country');
 
-### Jekyll Themes
+const Joi = joi.extend(joi-counry);
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/mongroves/joi-country-validator/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+const test2 = { country: 'ch' };
 
-### Support or Contact
+const schema = joi.object().keys({
+    country: joi.string().country(),
+})
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+
+const { value, error } = Joi.compile(schema)
+    .prefs({ errors: { label: 'key' } })
+    .validate(test2);
+
+console.log({ value, error});
+```
+
+# Support 
+it will a plus if we get enough donationation so I can continue creating small and meaningful packages
+
+<a href="https://www.buymeacoffee.com/truestbyheart" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+# License
+MIT license
+
+
