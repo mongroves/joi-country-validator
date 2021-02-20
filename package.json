@@ -5,7 +5,7 @@
   "description": "A simple library to add joi functionality to validate country",
   "main": "src",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"No test specified\""
   },
   "repository": {
     "type": "git",
