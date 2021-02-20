@@ -1,6 +1,7 @@
 {
-  "name": "joi-country-validator",
-  "version": "1.0.0",
+  "name": "joi-country",
+  "version": "0.1.0",
+  "private": false,
   "description": "A simple library to add joi functionality to validate country",
   "main": "src",
   "scripts": {
